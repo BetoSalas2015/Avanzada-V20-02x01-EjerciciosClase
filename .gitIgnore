@@ -1,0 +1,6 @@
+# Archivos a ignorar
+Operadores.vcxproj.*
+Operadores.vcxproj
+
+# Carpetas a Ignorar
+/Debug/
