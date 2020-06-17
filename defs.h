@@ -19,6 +19,9 @@ struct Persona
 	int edad;
 } Juanito, *ptrJuanito;
 
+char car;
 int a, b, c, d;
 float  e, f, g;
+double h;
+int *ptr;
 

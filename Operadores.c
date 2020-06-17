@@ -39,7 +39,7 @@ void Primarios()
 	PR(d, ptrJuanito->edad); NL;
 }
 
-int main(void)
+void unarios()
 {
 	// Operadores Unarios
 	// Negación Logica (!)
@@ -97,8 +97,96 @@ int main(void)
 	printf("El tipo struct Persona ocupa %d bytes.\n", sizeof(struct Persona) );
 	printf("El arreglo Arreglo ocupa %d bytes.\n", sizeof(Arreglo) );
 
+	// Dierección (&) y Indirección -(*)
+	ptrJuanito = &Juanito;  // la direccion de memoria de Juanito
+	strcpy(Juanito.nombre, "Juan Pérez");
+	ptrJuanito->edad = 30;
+	printf("Juanito esta en la dirección %p y ahi hay guardado %s\n", &Juanito, ptrJuanito->nombre );
 
+	a = 20;
+	b = 10;
+	PRINT1(d, a);
+	ptr = &a;		//  Dirección de...
+	*ptr = 30;		//  El contenido de ...
+	PRINT1(d, a); 
 
+	// cast (tipo de dato)
+	car = 75;
+	PRINT1(d,car);
+	PRINT1(c,car);
+
+	a = car;		// Promocion de tipos:  char -> int
+	f = a;			// int -> float
+	h = f;			// float -> double;
+	f = h;			// "Pérdida de presición"
+
+	a = (int) car;	// Conversión de char a int
+	f = (float) a;	// Conversión de int a float
+	h = (double) f;	// Conversión de float a double
+	f = (float) h;	// Conversión de double a float
+
+	f = 3;
+
+	PRINT1(d, 5 / 2);
+	PRINT1(f, ((float) 5) / 2);
+}
+
+void Multiplicativos()
+{
+	// Operadores Multiplicativos 
+	// Multiplicación   (*)
+	PRINT1(d, 5 * 4);
+
+	// División (/)
+	PRINT1(d, 5 / 2);  //  División entera
+	PRINT1(f, 5.0 / 2); // División
+	PRINT1(f, 5 / 2.0);
+
+	// Módulo  (%)
+	printf("5 %% 2 = %d\n", 5 % 2);
+}
+
+void Aditivos()
+{
+	// Aditivos
+	// Suma (+)
+	PRINT1(d, 50 + 300);
+	// Resta (-)
+	PRINT1(d, 50 - 300);
+}
+
+void Desplazamiento()
+{
+	//  Desplazamiento
+	// Desplazamiento a la derecha (<<)
+	a = 27;
+	PRINT1(d, a << 1);
+	PRINT1(d, a << 2);
+	PRINT1(d, a << 3);
+
+	// Desplazamiento a la izquierda (>>)
+	a = 216;
+	PRINT1(d, a >> 1);
+	PRINT1(d, a >> 2);
+	PRINT1(d, a >> 3);
+
+	PRINT1(d, 11 >> 1);
+}
+
+int main(void)
+{
+	//  Operadores Relacionales
+	PRINT1(d, 5 > 2);
+	PRINT1(d, 5 >= 2);
+	PRINT1(d, 5 < 2);
+	PRINT1(d, 5 <= 2);
+
+	a = 0;
+	PRINT1(d, (!5 > a++));
+	PRINT1(d, (!!5 > a++));
+
+	a = 0;
+	PRINT1(d, (!!5 > a++));
 
 	system("pause");
 }
