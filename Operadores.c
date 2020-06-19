@@ -99,7 +99,7 @@ void unarios()
 
 	// Dierección (&) y Indirección -(*)
 	ptrJuanito = &Juanito;  // la direccion de memoria de Juanito
-	strcpy(Juanito.nombre, "Juan Pérez");
+	//strcpy(Juanito.nombre, "Juan Pérez");
 	ptrJuanito->edad = 30;
 	printf("Juanito esta en la dirección %p y ahi hay guardado %s\n", &Juanito, ptrJuanito->nombre );
 
@@ -173,7 +173,7 @@ void Desplazamiento()
 	PRINT1(d, 11 >> 1);
 }
 
-int main(void)
+void Relacionales ()
 {
 	//  Operadores Relacionales
 	PRINT1(d, 5 > 2);
@@ -187,6 +187,129 @@ int main(void)
 
 	a = 0;
 	PRINT1(d, (!!5 > a++));
+}
+
+void Igualdad()
+{
+	// Operadores de iagualdad
+	// Operador Igual a (==)
+	a = 20;
+	b = 30;
+
+	PRINT2(d, a, b);
+	PRINT1(d, a == b);
+	PRINT1(d, a != b);
+
+	PRINT2(d, a, b);
+	PRINT1(d, !a == !b);
+	PRINT1(d, !a++ == !b--);
+
+	PRINT2(d, a, b);
+	PRINT1(d, !a != !b);
+	PRINT1(d, !a++ != !b--);
+}
+
+void DeBits()
+{
+	// Operadores lógicos
+	// And (&)
+	PRINT1(d, 13 & 19);
+	PRINT1(d, 13 & 14);
+
+	// Or (|)
+	PRINT1(d, 13 | 19);
+	PRINT1(d, 13 | 14);
+
+	a = 15;
+	b = 35;
+	PRINT1(d, !a | b++ );
+	PRINT1(d, a++ ^ --b);
+}
+
+void Logicos()
+{
+	// Operadores de Bits
+	// And (&)
+	PRINT1(d, 13 && 19);
+	PRINT1(d, 0 && 14);
+
+	// Or (|)
+	PRINT1(d, 13 || 19);
+	PRINT1(d, 0 || 14);
+
+	a = 5;
+	b = 0;
+	c = 2;
+	PRINT1(d, a && b || c);
+	PRINT1(d, a || b && c);
+	PRINT1(d, a++ && b++ || c++);
+	PRINT3(d , a, b, c);
+
+	a = 0;
+	b = 5;
+	c = 2;
+	PRINT3(d , a, b, c);
+	PRINT1(d, (a++ == 1) && (b++ == 4) || (c++ != 3));
+	PRINT3(d , a, b, c);
+}
+
+void Condicional()
+{
+	//  Operador ternario (?:)
+	//  if(condición) verdadero; else falso;
+	// (condición) ? verdadero : falso
+
+	a = 20;
+	(a < 10) ? PRINT1(d, a) : PRINT1(d, b); 
+	(a > b) ? PRINT1(d, a) : PRINT1(d, a);
+}
+
+void asignacion()
+{
+	//  Asignacion (=)
+	a = 30 * 20;
+	a = b = c = 1;		// asignación multiple
+	PRINT3(d, a, b, c);
+
+	a -= b += c *= 2;		// asignación multiple
+	PRINT3(d, a, b, c);
+}
+
+int main(void)
+{
+	//  Ejercicios
+	int a = 3, b = 3, c = 0, d = -1, e = 3, f = 2;
+
+	PRINT1(d , a+=2*a*++b);
+	PRINT5(d, a, b, c, d, e); PRINT1(d, f);
+
+	PRINT1(d , b=++b+b++);
+	PRINT5(d, a, b, c, d, e); PRINT1(d, f);
+
+	PRINT1(d , e/=d+d++);
+	PRINT5(d, a, b, c, d, e); PRINT1(d, f);
+
+	a = 3; b = 3; c = 0; d = -1; e = 3; f = 2;
+
+	PRINT1(d , d=d?d--:d++);
+	PRINT5(d, a, b, c, d, e); PRINT1(d, f);
+
+	a = 3; b = 3; c = 0; d = -1; e = 3; f = 2;
+
+	PRINT1(d , !a+!b+(d&&c));
+	PRINT5(d, a, b, c, d, e); PRINT1(d, f);
+
+	PRINT1(d , d=(a||b)&&!(c||(d &&!f)));
+	PRINT5(d, a, b, c, d, e); PRINT1(d, f);
+
+	a = 3; b = 3; c = 0; d = -1; e = 3; f = 2;
+
+	PRINT1(d , e*=!!!!!!d);
+	PRINT5(d, a, b, c, d, e); PRINT1(d, f);
+
+	PRINT1(d , a%b*c-d++);
+	PRINT5(d, a, b, c, d, e); PRINT1(d, f);
 
 	system("pause");
 }
+

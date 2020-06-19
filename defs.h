@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define PR(fmt,val) printf(#val "= %"#fmt "\t", (val))
+#define PR(fmt,val) printf(#val " = %"#fmt "\t", (val))
 #define NL putchar('\n')   
 
 #define PRINT1(f, x1) PR(f,x1), NL
